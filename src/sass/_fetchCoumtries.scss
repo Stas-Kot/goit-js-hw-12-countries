@@ -1,0 +1,29 @@
+body {
+  background-color: #009688;
+  text-align: left;
+}
+
+li {
+  list-style-position: inside;
+  text-transform: uppercase;
+}
+
+ul {
+  text-align: left;
+}
+
+.input {
+  margin-left: 40px;
+  text-align: left;
+  padding: 10px;
+  margin-top: 70px;
+  width: 350px;
+  border: 3px solid #ff8c00;
+}
+
+.pnotify {
+  margin-top: 80px;
+  top: 500px; /*Replace the 25px with the top that you need*/
+  right: 25px;
+  position: absolute;
+}
