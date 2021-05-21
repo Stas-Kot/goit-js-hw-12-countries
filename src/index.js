@@ -1,13 +1,6 @@
 import './sass/main.scss';
-import fetchCountries from './js/fetchCountries';
 import debounce from 'lodash.debounce';
+import refs from './js/refs';
+import onInputSearch from './js/input';
 
-
-const inputEl = document.getElementById('input');
-inputEl.addEventListener('input', debounce(onInputSearch, 500));
-
-function onInputSearch(e) {
-    console.log(e.target.value);
-    const searchQuery = e.target.value;
-    fetchCountries(searchQuery);
-}
+refs.inputEl.addEventListener('input', debounce(onInputSearch, 500));
