@@ -1,9 +1,11 @@
 import { error } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
 import render from './render';
+import api from './apiServices';
 
 export default function fetchCountries(searchQuery) {
-  fetch(`https://restcountries.eu/rest/v2/name/${searchQuery}`)
+  api
+    .getCountries()
     .then(response => {
       return response.json();
     })
@@ -15,6 +17,7 @@ export default function fetchCountries(searchQuery) {
           width: '500px',
           delay: 3000,
         });
+        render.clearInput();
       } else if (countries.length > 1) {
         render.countryNamesList(countries);
       } else if (countries.length === 1) {
