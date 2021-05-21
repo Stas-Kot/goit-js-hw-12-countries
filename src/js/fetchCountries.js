@@ -4,7 +4,8 @@ import render from './render';
 import api from './apiServices';
 
 export default function fetchCountries(searchQuery) {
-  api
+  if (searchQuery !== '') {
+    api
     .getCountries()
     .then(response => {
       return response.json();
@@ -27,4 +28,5 @@ export default function fetchCountries(searchQuery) {
     .catch(error => {
       console.log(error);
     });
+  }
 }
